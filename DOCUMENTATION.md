@@ -1,56 +1,102 @@
+# API Documentation
+
+Welcome to the documentation for the Person API. This API allows you to perform CRUD (Create, Read, Update, Delete) operations on person records. You can use this API to manage information about individuals.
+
+## Table of Contents
+
+- [Getting Started](#getting-started)
+  - [Base URL](#base-url)
+  - [Authentication](#authentication)
+- [API Endpoints](#api-endpoints)
+  - [Create a New Person](#create-a-new-person)
+  - [Fetch Details of a Person](#fetch-details-of-a-person)
+  - [Modify the Details of an Existing Person](#modify-the-details-of-an-existing-person)
+  - [Remove a Person](#remove-a-person)
+- [Request and Response Formats](#request-and-response-formats)
+- [Known Limitations](#known-limitations)
+- [Deployment](#deployment)
+
+## Getting Started
+
+### Base URL
+
+The base URL for all API endpoints is:
+https://stage2-naxq.onrender.com/api
+
+### Authentication
+
+This API does not require authentication for the provided endpoints. However, you may implement authentication and authorization as needed for your specific use case.
+
 ## API Endpoints
 
-- Adding a New Person
+### Create a New Person
 
-Endpoint: POST /api/person
-Request Body:
+- **Endpoint**: POST /api
+- **Description**: Adds a new person to the database.
+- **Request Body**:
+  `json
+{
+  "name": "Your Name",
+}
+`
+- **Response**:
+  `json
+{
+    "name": "Your Name"
+    "_id": "id",
+}
+`
 
-    `{
+### Fetch Details of a Person
 
-    "name" : "Your Name"
+- **Endpoint**: GET /people/:name
+- **Description**: Retrieves details of a person by name.
+- **Response**:
+  `json
+{
+    "name": "Your Name",
+    "_id": "id"
+}
+`
 
-    }`
+### Modify the Details of an Existing Person
 
-Response:
+- **Endpoint**: PUT /people/:name
+- **Description**: Modifies details of an existing person by name.
+- **Request Body**:
+  `json
+{
+    "name": "Your Name",
+    "_id": "id"
+}
+`
+- **Response**:
+  `json
+{
+    "name": "Your Name",
+    "_id": "id"
+}
+`
 
-    `{
-    "_id": "Id",
-    "name": "John Doe",
-    }`
+### Remove a Person
 
-- Fetching details of a person
+- **Endpoint**: DELETE /people/:name
+- **Description**: Removes a person by name.
+- **Response**:
 
-Endpoint: GET /api/people/:name
-Response:
+A status code will return as 204 for a succussfully operation and return nothing as response
 
-    `{
-    "_id": "Id",
-    "name": "John Doe",
-    }`
+## Request and Response Formats
 
-- Update a Person
-  Endpoint: PUT /api/people/:name
-  Request Body:
+- Request bodies must be in JSON format.
+- Response bodies are in JSON format and include the person's name and id
 
-  `{
-"name" : "Your Name"
-}`
+## Known Limitations
 
-response:
+- The API does not currently support pagination for fetching multiple records.
+- No authentication or authorization mechanisms are provided; consider adding these for security.
+- Error handling and validation of request data are minimal; you may need to enhance this for production use.
 
-    `{
-    "_id": "Id",
-    "name": "Updated Name",
-    }`
+## Deployment
 
-- Removing a Person
-  Endpoint: DELETE /api/people/:name
-  Response:
-
-### Testing
-
-    To test the API, you can use a tool like Postman
-
-### Deployment
-
-    To deploy the API, you can use cloud platforms like Render or AWS. Be sure to configure your environment variables and MongoDB connection settings on your hosting platform.
+- To deploy this API, you can use cloud hosting platforms like Render, AWS, or others. Ensure that you configure environment variables and MongoDB connection settings on your chosen hosting platform.
