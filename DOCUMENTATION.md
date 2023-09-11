@@ -34,49 +34,39 @@ This API does not require authentication for the provided endpoints. However, yo
 - **Endpoint**: POST /api
 - **Description**: Adds a new person to the database.
 - **Request Body**:
-  `json
-  {
-  "name": "Your Name",
-  }
-  `
+  `{
+"name": "Your Name",
+}`
 - **Response**:
-  `json
-  {
-      "name": "Your Name"
-      "_id": "id",
-  }
-  `
+  `{
+    "name": "Your Name"
+    "_id": "id",
+}`
 
 ### Fetch Details of a Person
 
 - **Endpoint**: GET /people/:name
 - **Description**: Retrieves details of a person by name.
 - **Response**:
-  `json
-  {
-      "name": "Your Name",
-      "_id": "id"
-  }
-  `
+  `{
+    "name": "Your Name",
+    "_id": "id"
+}`
 
 ### Modify the Details of an Existing Person
 
 - **Endpoint**: PUT /people/:name
 - **Description**: Modifies details of an existing person by name.
 - **Request Body**:
-  `json
-  {
-      "name": "Your Name",
-      "_id": "id"
-  }
-  `
+  `{
+    "name": "Your Name",
+    "_id": "id"
+}`
 - **Response**:
-  `json
-  {
-      "name": "Your Name",
-      "_id": "id"
-  }
-  `
+  `{
+    "name": "Your Name",
+    "_id": "id"
+}`
 
 ### Remove a Person
 
