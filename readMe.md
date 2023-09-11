@@ -55,17 +55,17 @@ Clone the repository:
 - **Endpoint**: POST /api
 - **Request Body**:
   `json
-{
-    "name": "John Doe",    
-}
-`
+  {
+      "name": "John Doe",    
+  }
+  `
 - **Response**:
   `json
-{
-    "name": "John Doe",
-    "_id": "id"
-}
-`
+  {
+      "name": "John Doe",
+      "_id": "id"
+  }
+  `
 
 ### Fetching details of a person
 
@@ -73,28 +73,28 @@ Clone the repository:
 
 - **Response**:
   `json
-{
-    "name": "Your Name"
-    "_id": "id",
-}
-`
+  {
+      "name": "Your Name"
+      "_id": "id",
+  }
+  `
 
 ### Update a Person
 
 - **Endpoint**: PUT /api/:name
 - **Request Body**:
   `json
-{
-    "name": "Your Name"
-}
-`
+  {
+      "name": "Your Name"
+  }
+  `
 - **Response**:
   `json
-{
-    "name": "Your Name"
-    "_id": "id",
-}
-`
+  {
+      "name": "Your Name"
+      "_id": "id",
+  }
+  `
 
 ### Removing a Person
 
