@@ -7,7 +7,7 @@ const app = express();
 
 app.use(express.json());
 
-app.post('/api/person', async (req, res) => {
+app.post('/api', async (req, res) => {
   try {
     const person = await Person.create(req.body);
     res.status(201).json(person);
@@ -16,7 +16,7 @@ app.post('/api/person', async (req, res) => {
   }
 });
 
-app.get('/api/person/:name', async (req, res) => {
+app.get('/api/:name', async (req, res) => {
   try {
     const person = await Person.findOne({ name: req.params.name });
     if (!person) {
@@ -28,7 +28,7 @@ app.get('/api/person/:name', async (req, res) => {
   }
 });
 
-app.put('/api/person/:name', async (req, res) => {
+app.put('/api/:name', async (req, res) => {
   try {
     const person = await Person.findOneAndUpdate(
       { name: req.params.name },
@@ -46,7 +46,7 @@ app.put('/api/person/:name', async (req, res) => {
   }
 });
 
-app.delete('/api/person/:name', async (req, res) => {
+app.delete('/api/:name', async (req, res) => {
   try {
     const person = await Person.findOneAndDelete({ name: req.params.name });
     if (!person) {

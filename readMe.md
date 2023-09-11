@@ -12,11 +12,6 @@ This is a simple REST API for managing information about people. It provides a b
   - [Fetch Details of a Person](#fetch-details-of-a-person)
   - [Modify the Details of an Existing Person](#modify-the-details-of-an-existing-person)
   - [Remove a Person](#remove-a-person)
-- [Testing](#testing)
-- [Deployment](#deployment)
-- [Documentation](#documentation)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## Getting Started
 
@@ -31,7 +26,6 @@ Before you begin, ensure you have met the following requirements:
 
 Clone the repository:
 
-    ```bash
     git clone https://github.com/yourusername/person-api.git
     cd person-api
 
@@ -55,55 +49,27 @@ Clone the repository:
 
 - Adding a New Person
 
-Endpoint: POST /api/person
+Endpoint: POST /api
 Request Body:
 
-`{
+    `{
 
-"name" : "Your Name"
+    "name" : "Your Name"
 
-}`
-
-Response:
-
-`{
-"_id": "Id",
-"name": "John Doe",
-}`
+    }`
 
 - Fetching details of a person
 
-Endpoint: GET /api/people/:name
-Response:
-
-`{
-"_id": "Id",
-"name": "John Doe",
-}`
+Endpoint: GET /api/:name
 
 - Update a Person
-  Endpoint: PUT /api/people/:name
+  Endpoint: PUT /api/:name
   Request Body:
 
-`{
+  `{
 "name" : "Your Name"
 }`
 
-response:
-
-`{
-"_id": "Id",
-"name": "Updated Name",
-}`
-
 - Removing a Person
-  Endpoint: DELETE /api/people/:name
+  Endpoint: DELETE /api/:name
   Response:
-
-### Testing
-
-    To test the API, you can use a tool like Postman
-
-### Deployment
-
-    To deploy the API, you can use cloud platforms like Render or AWS. Be sure to configure your environment variables and MongoDB connection settings on your hosting platform.
