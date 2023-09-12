@@ -16,9 +16,9 @@ app.post('/api', async (req, res) => {
   }
 });
 
-app.get('/api/:name', async (req, res) => {
+app.get('/api/:id', async (req, res) => {
   try {
-    const person = await Person.findOne({ name: req.params.id });
+    const person = await Person.findById({ name: req.params.id });
     if (!person) {
       return res.status(404).json({ error: 'Person not found' });
     }
@@ -28,9 +28,9 @@ app.get('/api/:name', async (req, res) => {
   }
 });
 
-app.put('/api/:name', async (req, res) => {
+app.put('/api/:id', async (req, res) => {
   try {
-    const person = await Person.findOneAndUpdate(
+    const person = await Person.findByIdAndUpdate(
       { name: req.params.id },
       req.body,
       {
@@ -46,9 +46,9 @@ app.put('/api/:name', async (req, res) => {
   }
 });
 
-app.delete('/api/:name', async (req, res) => {
+app.delete('/api/:id', async (req, res) => {
   try {
-    const person = await Person.findOneAndDelete({ name: req.params.id });
+    const person = await Person.findByIdAndDelete({ name: req.params.id });
     if (!person) {
       return res.status(400).json({ error: 'Person not found' });
     }
