@@ -18,7 +18,7 @@ app.post('/api', async (req, res) => {
 
 app.get('/api/:name', async (req, res) => {
   try {
-    const person = await Person.findOne({ name: req.params.name });
+    const person = await Person.findOne({ name: req.params.id });
     if (!person) {
       return res.status(404).json({ error: 'Person not found' });
     }
@@ -31,7 +31,7 @@ app.get('/api/:name', async (req, res) => {
 app.put('/api/:name', async (req, res) => {
   try {
     const person = await Person.findOneAndUpdate(
-      { name: req.params.name },
+      { name: req.params.id },
       req.body,
       {
         new: true,
@@ -48,7 +48,7 @@ app.put('/api/:name', async (req, res) => {
 
 app.delete('/api/:name', async (req, res) => {
   try {
-    const person = await Person.findOneAndDelete({ name: req.params.name });
+    const person = await Person.findOneAndDelete({ name: req.params.id });
     if (!person) {
       return res.status(400).json({ error: 'Person not found' });
     }
