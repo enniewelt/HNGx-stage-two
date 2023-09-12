@@ -18,7 +18,7 @@ app.post('/api', async (req, res) => {
 
 app.get('/api/:id', async (req, res) => {
   try {
-    const person = await Person.findById({ name: req.params.id });
+    const person = await Person.findById(req.params.id);
     if (!person) {
       return res.status(404).json({ error: 'Person not found' });
     }
@@ -30,13 +30,9 @@ app.get('/api/:id', async (req, res) => {
 
 app.put('/api/:id', async (req, res) => {
   try {
-    const person = await Person.findByIdAndUpdate(
-      { name: req.params.id },
-      req.body,
-      {
-        new: true,
-      }
-    );
+    const person = await Person.findByIdAndUpdate(req.params.id, req.body, {
+      new: true,
+    });
     if (!person) {
       return res.status(400).json({ error: 'Person not found' });
     }
@@ -48,7 +44,7 @@ app.put('/api/:id', async (req, res) => {
 
 app.delete('/api/:id', async (req, res) => {
   try {
-    const person = await Person.findByIdAndDelete({ name: req.params.id });
+    const person = await Person.findByIdAndDelete(req.params.id);
     if (!person) {
       return res.status(400).json({ error: 'Person not found' });
     }
