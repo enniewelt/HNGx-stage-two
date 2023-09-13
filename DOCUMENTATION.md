@@ -22,7 +22,7 @@ Welcome to the documentation for the Person API. This API allows you to perform 
 ### Base URL
 
 The base URL for all API endpoints is:
-https://person-api-auaj.onrender.com/api
+https://light-tiara-newt.cyclic.app/api
 
 ### Authentication
 
@@ -32,7 +32,7 @@ This API does not require authentication for the provided endpoints. However, yo
 
 ### Create a New Person
 
-- **Endpoint**: https://person-api-auaj.onrender.com/api
+- **Endpoint**: https://light-tiara-newt.cyclic.app/api
 - **HTTP Method**: POST
 - **Description**: Adds a new person to the database.
 - **Request Body**:
@@ -60,7 +60,8 @@ This API does not require authentication for the provided endpoints. However, yo
 
 ### Fetch Details of a Person
 
-- **Endpoint**: GET https://person-api-auaj.onrender.com/api/id
+- **Endpoint**: https://light-tiara-newt.cyclic.app/api/id
+- **HTTP Method**: GET
 - **Description**: Retrieves details of a person by Id.
 - **Response Format**:
 
@@ -79,7 +80,8 @@ This API does not require authentication for the provided endpoints. However, yo
 
 ### Modify the Details of an Existing Person
 
-- **Endpoint**: PUT https://person-api-auaj.onrender.com/api/id
+- **Endpoint**: https://light-tiara-newt.cyclic.app/api/id
+- **HTTP Method**: PUT
 - **Description**: Modifies details of an existing person by Id.
 - **Request Body**:
 
@@ -110,7 +112,7 @@ This API does not require authentication for the provided endpoints. However, yo
 
 ### Remove a Person
 
-- **Endpoint**: https://person-api-auaj.onrender.com/api/id
+- **Endpoint**: https://light-tiara-newt.cyclic.app/api/id
 - **HTTP Method**: DELETE
 - **Description**: Removes a person by Id.
 - **Response Format**:
@@ -131,11 +133,11 @@ This API does not require authentication for the provided endpoints. However, yo
 - **Request**:
 
 ```http
-POST https://person-api-auaj.onrender.com/api
+POST https://light-tiara-newt.cyclic.app/api
 Content-Type: application/json
 
 {
-  "name": "Your Name"
+  "name": "Dash Ebony"
 }
 ```
 
@@ -158,7 +160,7 @@ Content-Type: application/json
 - **Request**:
 
 ```http
-GET https://person-api-auaj.onrender.com/api/2
+GET https://light-tiara-newt.cyclic.app/api/2
 ```
 
 - **Response**:
@@ -181,7 +183,7 @@ Content-Type: application/json
 - **Request**:
 
 ```http
-PUT https://person-api-auaj.onrender.com/api/2
+PUT https://light-tiara-newt.cyclic.app/api/2
 Content-Type: application/json
 
 {
@@ -210,7 +212,7 @@ Content-Type: application/json
 - **Request**:
 
 ```http
-DELETE https://person-api-auaj.onrender.com/api/2
+DELETE https://light-tiara-newt.cyclic.app/api/2
 ```
 
 - **Response**:

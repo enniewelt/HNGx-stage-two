@@ -52,7 +52,7 @@ Clone the repository:
 
 ### Create a New Person
 
-- **Endpoint**: POST https://person-api-auaj.onrender.com/api/id
+- **Endpoint**: POST https://light-tiara-newt.cyclic.app/api
 - **Request Body**:
   `{
     "name": "John Doe",    
@@ -65,7 +65,7 @@ Clone the repository:
 
 ### Fetching details of a person
 
-- **Endpoint**: GET https://person-api-auaj.onrender.com/api/id
+- **Endpoint**: GET https://light-tiara-newt.cyclic.app/api/id
 
 - **Response**:
   `{
@@ -75,7 +75,7 @@ Clone the repository:
 
 ### Update a Person
 
-- **Endpoint**: PUT https://person-api-auaj.onrender.com/api/id
+- **Endpoint**: PUT https://light-tiara-newt.cyclic.app/api/id
 - **Request Body**:
   `{
     "name": "Your Name"
@@ -88,7 +88,7 @@ Clone the repository:
 
 ### Removing a Person
 
-- **Endpoint**: DELETE https://person-api-auaj.onrender.com/api/id
+- **Endpoint**: DELETE https://light-tiara-newt.cyclic.app/api/id
 - **Response**:
   A status code will return as 204 for a succussfully operation and return nothing as response
 
@@ -100,6 +100,6 @@ Clone the repository:
 
 - To deploy the API, you can use cloud platforms like Render or AWS. Be sure to configure your environment variables and MongoDB connection settings on your hosting platform.
 
-## Development
+## Documentation
 
 - For more detailed information on how to use the API, view the full [API documentation](https://github.com/enniewelt/HNGx-stage-two/blob/master/DOCUMENTATION.md).
