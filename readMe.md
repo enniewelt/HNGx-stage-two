@@ -52,7 +52,7 @@ Clone the repository:
 
 ### Create a New Person
 
-- **Endpoint**: POST /api
+- **Endpoint**: POST https://person-api-auaj.onrender.com/api/id
 - **Request Body**:
   `{
     "name": "John Doe",    
@@ -65,7 +65,7 @@ Clone the repository:
 
 ### Fetching details of a person
 
-- **Endpoint**: GET /api/:name
+- **Endpoint**: GET https://person-api-auaj.onrender.com/api/id
 
 - **Response**:
   `{
@@ -75,7 +75,7 @@ Clone the repository:
 
 ### Update a Person
 
-- **Endpoint**: PUT /api/:name
+- **Endpoint**: PUT https://person-api-auaj.onrender.com/api/id
 - **Request Body**:
   `{
     "name": "Your Name"
@@ -88,7 +88,7 @@ Clone the repository:
 
 ### Removing a Person
 
-- **Endpoint**: DELETE /api/:name
+- **Endpoint**: DELETE https://person-api-auaj.onrender.com/api/id
 - **Response**:
   A status code will return as 204 for a succussfully operation and return nothing as response
 

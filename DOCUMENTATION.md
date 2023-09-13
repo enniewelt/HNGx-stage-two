@@ -13,6 +13,7 @@ Welcome to the documentation for the Person API. This API allows you to perform 
   - [Modify the Details of an Existing Person](#modify-the-details-of-an-existing-person)
   - [Remove a Person](#remove-a-person)
 - [Request and Response Formats](#request-and-response-formats)
+- [Sample Usage](#sample-usage)
 - [Known Limitations](#known-limitations)
 - [Deployment](#deployment)
 
@@ -21,7 +22,7 @@ Welcome to the documentation for the Person API. This API allows you to perform 
 ### Base URL
 
 The base URL for all API endpoints is:
-https://stage2-naxq.onrender.com/api
+https://person-api-auaj.onrender.com/api
 
 ### Authentication
 
@@ -31,55 +32,197 @@ This API does not require authentication for the provided endpoints. However, yo
 
 ### Create a New Person
 
-- **Endpoint**: POST /api
+- **Endpoint**: https://person-api-auaj.onrender.com/api
+- **HTTP Method**: POST
 - **Description**: Adds a new person to the database.
 - **Request Body**:
-  `{
-"name": "Your Name",
-}`
-- **Response**:
-  `{
-    "name": "Your Name"
-    "_id": "id",
-}`
+
+```json
+{
+  "name": "Your Name"
+}
+```
+
+- **Response Format**:
+
+```json
+{
+  "_id": 1,
+  "name": "Your Name",
+  "createdAt": "2023-09-13T13:09:51.705Z",
+  "updatedAt": "2023-09-13T13:09:51.705Z"
+}
+```
+
+- **status Codes**:
+  - 201 Created: Person Created.
+  - 400 Bad Request: Validation failed
 
 ### Fetch Details of a Person
 
-- **Endpoint**: GET /people/:name
-- **Description**: Retrieves details of a person by name.
-- **Response**:
-  `{
-    "name": "Your Name",
-    "_id": "id"
-}`
+- **Endpoint**: GET https://person-api-auaj.onrender.com/api/id
+- **Description**: Retrieves details of a person by Id.
+- **Response Format**:
+
+```json
+{
+  "_id": 1,
+  "name": "Your Name",
+  "createdAt": "2023-09-13T13:09:51.705Z",
+  "updatedAt": "2023-09-13T13:09:51.705Z"
+}
+```
+
+- **status Codes**:
+  - 200 Ok: Person Found.
+  - 404 Not Found: Person not found
 
 ### Modify the Details of an Existing Person
 
-- **Endpoint**: PUT /people/:name
-- **Description**: Modifies details of an existing person by name.
+- **Endpoint**: PUT https://person-api-auaj.onrender.com/api/id
+- **Description**: Modifies details of an existing person by Id.
 - **Request Body**:
-  `{
-    "name": "Your Name",
-    "_id": "id"
-}`
-- **Response**:
-  `{
-    "name": "Your Name",
-    "_id": "id"
-}`
+
+```json
+{
+  "_id": 1,
+  "name": "Updated Name",
+  "age": 45
+}
+```
+
+- **Response Format**:
+
+```json
+{
+  "_id": 1,
+  "name": "Updated Name",
+  "age": 45,
+  "createdAt": "2023-09-13T13:09:51.705Z",
+  "updatedAt": "2023-10-12T23:10:51.705Z"
+}
+```
+
+- **status Codes**:
+  - 200 Ok: Person Updated.
+  - 404 Not Found: Person not found.
+  - 400 Bad Request: Valdation failed.
 
 ### Remove a Person
 
-- **Endpoint**: DELETE /people/:name
-- **Description**: Removes a person by name.
-- **Response**:
+- **Endpoint**: https://person-api-auaj.onrender.com/api/id
+- **HTTP Method**: DELETE
+- **Description**: Removes a person by Id.
+- **Response Format**:
 
-A status code will return as 204 for a succussfully operation and return nothing as response
+- **status Codes**:
+  - 204 No Content: Nothing will be displayed
+  - 404 Not Found: Person not found.
 
 ## Request and Response Formats
 
 - Request bodies must be in JSON format.
 - Response bodies are in JSON format and include the person's name and id
+
+## Sample Usage
+
+### Create a New Person
+
+- **Request**:
+
+```http
+POST https://person-api-auaj.onrender.com/api
+Content-Type: application/json
+
+{
+  "name": "Your Name"
+}
+```
+
+- **Response**:
+
+```http
+Status Code: 201 Created
+Content-Type: application/json
+
+{
+  "id": 2,
+  "name": "Your Name",
+  "createdAt": "2023-09-13T13:09:51.705Z",
+  "updatedAt": "2023-09-13T13:09:51.705Z",
+}
+```
+
+### Fetch Details of a Person
+
+- **Request**:
+
+```http
+GET https://person-api-auaj.onrender.com/api/2
+```
+
+- **Response**:
+
+```http
+Status Code: 200 OK
+Content-Type: application/json
+
+{
+  "id": 2,
+  "name": "Your Name",
+  "createdAt": "2023-09-13T13:09:51.705Z",
+  "updatedAt": "2023-09-13T13:09:51.705Z",
+
+}
+```
+
+### Update Details of an Existing Person
+
+- **Request**:
+
+```http
+PUT https://person-api-auaj.onrender.com/api/2
+Content-Type: application/json
+
+{
+  "name": "Updated Name",
+  "age": 30
+}
+```
+
+- **Response**:
+
+```http
+Status Code 200 OK
+Content-Type: application/json
+
+{
+  "id": 2,
+  "name": "Updated Name",
+  "age": 30,
+  "createdAt": "2023-09-13T13:09:51.705Z",
+  "updatedAt": "2023-10-12T23:10:51.705Z",
+}
+```
+
+### Remove a Person
+
+- **Request**:
+
+```http
+DELETE https://person-api-auaj.onrender.com/api/2
+```
+
+- **Response**:
+
+```http
+HTTP/1.1 204 No Content
+Content-Type: application/json
+
+{
+  "message": "Person deleted"
+}
+```
 
 ## Known Limitations
 
