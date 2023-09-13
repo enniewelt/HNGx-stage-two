@@ -184,7 +184,7 @@ Content-Type: application/json
 
 ```http
 PUT https://light-tiara-newt.cyclic.app/api/2
-Content-Type: application/json
+
 
 {
   "name": "Updated Name",
@@ -218,12 +218,10 @@ DELETE https://light-tiara-newt.cyclic.app/api/2
 - **Response**:
 
 ```http
-HTTP/1.1 204 No Content
+Status Code: 204 No Content
 Content-Type: application/json
 
-{
-  "message": "Person deleted"
-}
+return an empty response for success
 ```
 
 ## Known Limitations
